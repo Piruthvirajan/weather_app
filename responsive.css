@@ -1,50 +1,48 @@
-@media(min-width:500px)and (max-width:600px){
-    .container{
-        width: 80%;
-    }
-    main{
-        max-width: 80%;
-    }
-    
-
+@media (min-width: 500px) and (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+  main {
+    max-width: 80%;
+  }
 }
 
-@media(min-width:600px){
-    input{
-        max-width:34.7rem;
-        margin-right: 4rem;
-    }
-    button{
-        max-width: 16rem;
-        min-width: 9.9rem;
-    }
-    form{
-        justify-content: center;
-    }
-    .container{
-        max-width: 40rem;
-    }
-    main{
-        max-width: 65%;
-    }
+@media (min-width: 600px) {
+  input {
+    max-width: 34.7rem;
+    margin-right: 4rem;
+  }
+  button {
+    max-width: 16rem;
+    min-width: 9.9rem;
+  }
+  form {
+    justify-content: center;
+  }
+  .container {
+    max-width: 40rem;
+  }
+  main {
+    max-width: 65%;
+  }
 }
 
-@media(max-width:336px){
-    .place,
-.temp {
-  font-size: 2.7rem;
-}
-.humidity {
-  font-size: 1.5rem;
-}
-.cloud-detail,
-img {
-  font-size: 2rem;
-}
-button{
+@media (max-width: 336px) {
+  .place,
+  .temp {
+    font-size: 2.7rem;
+  }
+  .humidity {
+    font-size: 1.5rem;
+  }
+  .cloud-detail,
+  img {
+    font-size: 2rem;
+  }
+  button {
     min-width: 6.2rem;
-}
-input{
+  }
+  input {
     margin-right: 2px;
-}
+  }
 }

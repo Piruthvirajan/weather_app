@@ -23,7 +23,7 @@ main {
 input,
 button {
   height: 4rem;
-  
+
   border-radius: 0.5rem;
 }
 form {
@@ -49,13 +49,12 @@ button {
   border-radius: 1rem;
   height: 40rem;
   width: 85%;
-  display: none;                            
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
   transition-delay: 2ms;
-  
 }
 
 .place,
@@ -70,14 +69,11 @@ img {
   font-size: 2.5rem;
 }
 
-img{
+img {
   width: 12rem;
-
-  
 }
 
-
-.commonErrorStyle{
+.commonErrorStyle {
   font-family: sans-serif;
   font-weight: 700;
   font-size: 2.6rem;
