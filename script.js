@@ -57,6 +57,7 @@ async function getWeatherData(cityname) {
 }
 
 function displayData(data) {
+  notFoundError.remove()
   const locationName = document.querySelector(".place");
   const temperature = document.querySelector(".temp");
   const humidity = document.querySelector(".humidity");
