@@ -5,6 +5,8 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 const main = document.querySelector("main");
 const errorMsg = document.createElement("p");
+const notFoundError = document.createElement('p')
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); //to remove default submit behaviour of forms (dont know what!!!)
@@ -14,9 +16,8 @@ form.addEventListener("submit", (event) => {
   } else {
     console.log("NO LOCATION ENTERED");
 
-    errorMsg.style.fontFamily = "sans-serif";
-    errorMsg.style.fontWeight = "700";
-    errorMsg.style.fontSize = "2.6rem";
+    
+    errorMsg.classList.add("commonErrorStyle")
 
     main.appendChild(errorMsg);
     main.style.justifyContent = "flex-start";
@@ -30,19 +31,33 @@ form.addEventListener("submit", (event) => {
 });
 
 async function getWeatherData(cityname) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`
-    );
-    const data = await response.json();
-    displayData(data);
+    const response =await  fetch(url);
+
+    if(response.status === 200){
+        const data = await response.json();
+        displayData(data);
+
+    }
+    else{
+        main.appendChild(notFoundError)
+        notFoundError.innerHTML = "Location not found"
+        main.style.justifyContent = "flex-start";
+        form.style.marginBottom = "4rem";
+        
+        notFoundError.classList.add("commonErrorStyle")
+
+    }
+    
+    
   } catch (err) {
     console.error(err);
   }
 }
 
 function displayData(data) {
-  console.log(data);
+  
   const locationName = document.querySelector(".place");
   const temperature = document.querySelector(".temp");
   const humidity = document.querySelector(".humidity");
